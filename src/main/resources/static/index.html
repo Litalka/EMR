@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>EMR</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script src="scripts/script.js"></script>
+</head>
+<body>
+	<h4>Add Record</h4>
+	<form action="/records" method="post">
+		age: <input type="text" name="age">  
+		blood_count: <input type="text" name="blood_count" > 
+		gender: <select name="gender">
+				  <option value="MALE">Male</option>
+				  <option value="FEMALE">Female</option>
+				</select> 
+		<!-- <input type="text" name="gender" > --> 
+		trauma: <select name="trauma">
+				  <option value="NONE">None</option>
+				  <option value="CUT">Cut</option>
+				  <option value="BURN">Burn</option>
+				  <option value="CRASH">Crash</option>
+				</select> 
+		<!-- <input type="text" name="trauma" > -->
+		<br>
+		 <input type="submit" value="Add Record">
+	</form>
+	
+	<br><br><br>
+	
+	<h4>Get Patients Diagnosis</h4>
+	<div>
+		record_id: <input type="text" name="id" >  
+		type: <select name="type">
+				  <option value="TRAUMAS">traumas</option>
+				  <option value="HEALTHY_BLOOD_COUNT">healthy blood count</option>
+				  <option value="HIGHEST_RISK">highest risk</option>
+				</select> 
+	</div>
+	<form id="diagnosisFormId" onsubmit="diagnosisOnSubmit()"  method="get" >
+		 <input type="submit" value="Get Patients Diagnosis">
+	</form>
+</body>
+</html>
